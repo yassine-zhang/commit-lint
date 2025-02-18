@@ -1,0 +1,26 @@
+{
+  "name": "commit-lint",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@commitlint/config-conventional": "^19.7.1",
+    "@types/bun": "latest",
+    "commitizen": "^4.3.1",
+    "commitlint": "^19.7.1",
+    "cz-customizable": "^7.4.0",
+    "husky": "^9.1.7"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  }
+}
