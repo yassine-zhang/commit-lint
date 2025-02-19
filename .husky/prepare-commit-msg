@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+# 如果是 merge 或者 rebase 等操作，跳过 commitizen
+if [ -n "$2" ]; then
+  echo "跳过 commitizen，因为存在 $1 操作"
+  exit 0
+fi
+
+# 使用 commitizen 进行交互式提交
+exec < /dev/tty && bunx cz --hook || true 

@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+# 只运行 lint-staged
+bunx lint-staged
+
+# 获取暂存的文件列表
+files=$(git diff --cached --name-only --diff-filter=ACM | tr '\n' ' ')
+
+# 重新添加文件（如果有修改）
+if [ -n "$files" ]; then
+  git add $files
+fi
+
+# 允许提交继续
+exit 0

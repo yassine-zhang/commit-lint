@@ -8,19 +8,27 @@
     "@types/bun": "latest",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "^8.0.0"
+    "husky": "^8.0.0",
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.5.1"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "scripts": {
-    "prepare": "husky",
+    "prepare": "husky install",
     "commitlint": "commitlint --edit",
-    "commit-cz": "cz"
+    "commit-cz": "cz",
+    "commit": "git-cz"
   },
   "config": {
     "commitizen": {
-      "path": "cz-conventional-changelog"
+      "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "lint-staged": {
+    "*.{js,cjs,mjs,md,ts,vue,json,css}": [
+      "prettier --write"
+    ]
   }
 }
