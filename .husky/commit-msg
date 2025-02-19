@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+# 可以使用 commitlint 做检查，但是没有命令行交互
+# bunx --bun commitlint --edit "$1"
+
+# 使用 commitizen 检查，有命令行交互一步一步生成 git 提交信息
+exec < /dev/tty && bunx cz --hook || true
