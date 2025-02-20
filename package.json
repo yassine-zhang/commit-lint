@@ -5,12 +5,16 @@
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
+    "@eslint/js": "^9.20.0",
     "@types/bun": "latest",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^9.20.1",
+    "globals": "^15.15.0",
     "husky": "^8.0.0",
     "lint-staged": "^15.4.3",
-    "prettier": "^3.5.1"
+    "prettier": "^3.5.1",
+    "typescript-eslint": "^8.24.1"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
@@ -25,10 +29,5 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "lint-staged": {
-    "*.{js,cjs,mjs,md,ts,vue,json,css}": [
-      "prettier --write"
-    ]
   }
 }
